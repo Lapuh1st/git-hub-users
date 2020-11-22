@@ -12,6 +12,7 @@ let App = () => {
   
   return (
     <div>
+      <h1 style={{textAlign: "center"}}>List of github users</h1>
       <Button />
       <Loading />
       <Users />

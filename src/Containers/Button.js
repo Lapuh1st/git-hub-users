@@ -1,20 +1,16 @@
 import React from 'react';
-import { getUsers, goBackFromDetailed } from '../Actions/index';
+import { goBackFromDetailed } from '../Actions/index';
 import { useDispatch, useSelector } from "react-redux";
 
 let Button = () => {
    const dispatch = useDispatch();
-
-   const state = useSelector(state => state);
-
-   console.log(state.userInfo);
+   const showDetailed = useSelector(state => state.showDetailed);
 
    function dispatchActions() {
-      dispatch(getUsers());
       dispatch(goBackFromDetailed());
    }
 
-   return <button onClick={() => dispatchActions()}>Go back to users</button>
+   return showDetailed ? <button className="button-back" onClick={() => dispatchActions()}></button> : null
 }
 
 export default Button;

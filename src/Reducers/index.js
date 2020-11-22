@@ -7,9 +7,11 @@ const reducer = (state = {}, action) => {
     case "GET_USER_INFO":  
       return { ...state, loading: true };
     case "USERS_INFO_RECEIVED":
-      return { ...state, userInfo: action.json, loading: false };
+      return { ...state, userInfo: action.json, loading: false, showDetailed: true };
     case "GO_BACK_FROM_DETAILED":
-      return { ...state, userInfo: false };
+      return { ...state, showDetailed: false };
+    case "GET_USER_INFO_NO_API_CALL":
+      return { ...state, showDetailed: true };
     default:
       return state;
   }

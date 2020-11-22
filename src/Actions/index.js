@@ -7,6 +7,10 @@ export const getUserInfo = (userName) => ({
     userName: userName
 });
 
+export const getUserInfoNoApiCall = () => ({
+    type: 'GET_USER_INFO_NO_API_CALL'
+});
+
 export const goBackFromDetailed = () => ({
     type: 'GO_BACK_FROM_DETAILED'
 });

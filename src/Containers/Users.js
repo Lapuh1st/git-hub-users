@@ -1,31 +1,34 @@
 import React from "react";
-import { getUserInfo } from '../Actions/index';
+import { getUserInfo, getUserInfoNoApiCall } from '../Actions/index';
 import { useSelector, useDispatch } from "react-redux";
-
-const articleStyle = {
-  width: "50%",
-  margin: "0 auto",
-  color: "olive"
-};
+import '../css/article.css';
 
 let Users = () => {
   let usersToShow = [];
   const dispatch = useDispatch();
   const state = useSelector(state => state);
 
-  console.log(state);
+  function showUserInfo (user) {
+    if (state.userInfo && state.userInfo.login === user) {
+      dispatch(getUserInfoNoApiCall());
+      return;
+    }
 
-  if (state.users && !state.userInfo) {
+    dispatch(getUserInfo(user));
+  }
 
+  if (state.users && !state.showDetailed) {
     usersToShow = state.users.map(user  => {
-      return <article style={articleStyle} key={user.id}>
+      return <article className="article" key={user.id}>
         <div>
-          <h1>{user.login}</h1>
-          <img width="100" height="100" src={user.avatar_url} alt="" />
-          <a href={user.html_url}>
+          <img className="article__img" width="100" height="100" src={user.avatar_url} alt="" />
+          <h1 className="article__title" >{user.login}</h1>
+          <a className="article__link" href={user.html_url} target="_blank" rel="noopener noreferrer">
             READ MORE on git hub
           </a>
-          <button onClick={() => (dispatch(getUserInfo(user.login)))}>Go for page</button>
+          <div className="article__button-container">
+            <button className="article__button" onClick={() => showUserInfo(user.login)}>Go for detailed page</button>
+          </div>
         </div>
       </article>
     })

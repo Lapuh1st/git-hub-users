@@ -1,0 +1,65 @@
+.article {
+    width: 90%;
+    margin: 25px auto;
+    border-radius: 5px;
+    border: 1px solid #aca7a7;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.article__img {
+  vertical-align: middle;
+  padding-left: 15px;
+  max-width: calc(100% - 15px );
+}
+
+.article__title {
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.article__link {
+  display: block;
+  padding-left: 15px;
+  color: #000;
+  margin-top: 10px;
+}
+
+.article__button-container {
+  text-align: right;
+}
+
+.article__button {
+  color: #fff;
+  background-color: #28a745;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+.button-back {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABmJLR0QA/wD/AP+gvaeTAAADtElEQVR4nO3dwU7cBhCA4VHeoah9nr4Ah0QckoeNVEVR0vRSDrlDT30FkJJDbCkiDION7dm1v09CQmDt7GF+rWFtiAAAAAAAAAAAAAAAAAAAAAAAgCVdRsR/EXEzfA4M3kTEXUR8Gz7uI+Jd6zOCE/EwDpHAIItDJBzeVfwax13ytaum5wgtHnvluI+ItxHxOvmeVxIO4ak4RiLhkJ4Tx0gkHMqUOEYi4RDmxDESCbv2kjhGImGXlohjJBJ2Zck4RiJhF9aIYyQSztqacYxEwlnaIo6RSDgr2bVVa15Hlc10PwknpSOOp2bfbjAXnmVqHBcR8SEi3q84/2ahx4YXmRPH9XDcpxXnO8Wi3dQfyH+LiH+H475GxO8bz4fNiAMS4oCEOCAhDkiIAxLigIQ4ICEOSIgDEuKAhDggIQ5IiAMS4oCEOCAhDkiIAxLigIQ4ICEOSIgDEuKAhDggIQ5IiAMS4oCEOCAhDkiIAxLigMSc/+z093Dcdfz4fx1bz4dNzF3OjxHxJcTBjnWf1nTPh1T3cnbPh1T3cnbPh1T3cnbPh1T3cnbPh1T3cnbPh1T3cnbPh1T3cnbPh1T3cnbPh9TUd6gvIuJDRLxvmg+bmRPH9XDcp4b5sBlX5UJCHJAQByTEAQlxQMKdgJBwJyAkuk9ruudDqns5u+dDqns5u+dDyrVVkHBtFSQuY34cS/wqd+p82NRt9L3PMWc+J+xV9xM4AfcR8U9E/BkR/zc/F1hd9ylO93wovY7Hf7367iDzodS9pN3zodS9pN3zodS9pN3zodS9pN3zodS9pN3zodS9pN3zodS9pN3zoTT3YsK/wt2FHMScJf0c7k/nQKae7jz8Cyd/bDwfNicSKIgECiKBgkigIBIoiAQKIoGCSKAgEiiIBAoigYJIoCASKIgECiKBgkigIBIoiAQKIoGCSKAgEiiIBAoigYJIoCASKIgECiKBgkigIBIoiAQKIoGCSKAgEiiIBAoigYJIoCASKIgECiKBgkigIBIoiAQKIoGCSKAgEihcxa9Lejd8/TEXEXE9HPd5xfmXCzw2LGJOJF8i4uOK828XemxYxNRI1p59s8FcmKQjEqdYnJUtf3B+k8x6u8IsWMwWkYiDs7ZmJOJgF9aIRBzsypKRiINdWiIScbBrL4lEHBzCnEjEwaFMiUQcHNJzIhEHh/ZUJOKAyK+j6rroEU7OY68kXjngJ1kk4oDBw0jEAQ9cxo87AW/C/RwAAAAAAAAAAAAAAAAAAAAAACv7DmETsddYEZeIAAAAAElFTkSuQmCC");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-color: unset;
+  border: none;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -5px;
+  left: -20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .article {
+    width: 50%;
+  }
+
+  .button-back {
+    top: 100px;
+    left: 150px;
+  }
+  
+}
+
