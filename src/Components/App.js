@@ -1,7 +1,7 @@
-import Button from '../Containers/Button';
-import Loading from '../Containers/Loading';
-import Users from '../Containers/Users';
-import UserDetailed from '../Containers/UserDetailed';
+import Button from "../Components/users/Button"
+import Loading from '../Components/users//Loading';
+import Users from '../Components/users//Users';
+import UserDetailed from '../Components/users//UserDetailed';
 import React from 'react';
 import { getUsers } from '../Actions/index';
 import { useDispatch } from "react-redux";

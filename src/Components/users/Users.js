@@ -1,7 +1,7 @@
 import React from "react";
-import { getUserInfo, getUserInfoNoApiCall } from '../Actions/index';
+import { getUserInfo, getUserInfoWithoutRequest } from '../../Actions/index';
 import { useSelector, useDispatch } from "react-redux";
-import '../css/article.css';
+import './css/article.css';
 
 let Users = () => {
   let usersToShow = [];
@@ -10,7 +10,7 @@ let Users = () => {
 
   function showUserInfo (user) {
     if (state.userInfo && state.userInfo.login === user) {
-      dispatch(getUserInfoNoApiCall());
+      dispatch(getUserInfoWithoutRequest());
       return;
     }
 
