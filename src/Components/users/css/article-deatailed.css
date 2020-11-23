@@ -1,7 +1,8 @@
 .detailed__container {
     display: inline-block;
-    width: 50%;
+    width: 100%;
     vertical-align: top;
+    box-sizing: border-box;
 }
 
 .detailed__link {
@@ -13,3 +14,16 @@
     padding-bottom: 2px;
     border-bottom: 1px solid #ccc;
 }
+
+.detailed__info__container {
+    padding: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .detailed__container {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+    }
+}
+

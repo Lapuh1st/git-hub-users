@@ -10,6 +10,7 @@ const Button = () => {
       dispatch(goBackFromDetailed());
    }
 
+
    return showDetailed ? <button className="button-back" onClick={() => dispatchActions()}></button> : null
 }
 
