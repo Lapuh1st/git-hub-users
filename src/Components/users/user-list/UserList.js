@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import { getUserInfo, getUserInfoWithoutRequest, getUsers } from '../../../Actions/index';
+import { getUsers } from '../../../Actions/index';
 import { useSelector, useDispatch } from "react-redux";
 import User from "../user-view/User"
 
@@ -12,17 +12,11 @@ let UserList = () => {
       dispatch(getUsers())
   }, []);
 
-  function showUserInfo (user) {
-    if (state.userInfo && state.userInfo.login === user) {
-      dispatch(getUserInfoWithoutRequest());
-      return;
-    }
-    dispatch(getUserInfo(user));
-  }
+  console.log({users: state.users})
 
-  if (state.users && !state.showDetailed) {
+  if (state.users && state.users.length) {
     usersToShow = state.users.map(user  => {
-      return User(user, showUserInfo);
+      return User(user);
     })
 
   }

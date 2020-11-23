@@ -6,7 +6,7 @@ const Loading = () => {
   const loading = useSelector(state => state.loading);
 
   return loading ? (
-    <div style={{ textAlign: "center" }}>
+    <div className="loader">
       <img src={img} alt="loading" />
       <h1>LOADING</h1>
     </div>
