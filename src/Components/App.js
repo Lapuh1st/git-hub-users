@@ -1,21 +1,14 @@
-import Button from "../Components/users/Button"
-import Loading from '../Components/users//Loading';
-import Users from '../Components/users//Users';
-import UserDetailed from '../Components/users//UserDetailed';
 import React from 'react';
-import { getUsers } from '../Actions/index';
-import { useDispatch } from "react-redux";
+import Loading from '../Components/users/Loading';
+import UserList from '../Components/users/user-list/UserList';
+import UserDetailed from '../Components/users/user-detailed/UserDetailed';
 
 let App = () => {
-  const dispatch = useDispatch();
-  dispatch(getUsers())
-  
   return (
     <div>
-      <h1 style={{textAlign: "center"}}>List of github users</h1>
-      <Button />
+      <h1 className="title">List of github users</h1>
+      <UserList />
       <Loading />
-      <Users />
       <UserDetailed />
     </div>
   )

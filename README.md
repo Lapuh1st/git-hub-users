@@ -1,6 +1,6 @@
 # git-hub-users
 
-Bulid with React/Redux-saga, as it was in mandatory in task
+Bulid with React/Redux-saga, as it was mandatory in task
 
 I think more easy way would be just create some:
 
@@ -9,6 +9,9 @@ get data from api ->
 set it to useState hook, and then just render users.
 
 ## Available Scripts
+
+First: 
+### `npm install`
 
 In the project directory, you can run:
 

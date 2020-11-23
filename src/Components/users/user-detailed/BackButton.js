@@ -1,5 +1,5 @@
 import React from 'react';
-import { goBackFromDetailed } from '../../Actions/index';
+import { goBackFromDetailed } from '../../../Actions/index';
 import { useDispatch, useSelector } from "react-redux";
 
 const Button = () => {

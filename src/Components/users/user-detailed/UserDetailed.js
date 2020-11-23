@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import './css//article-deatailed.css';
+import Button from "./BackButton"
+import './user-deatailed.css';
+
 
 const User = () => {
     const state = useSelector(state => state);
@@ -12,7 +14,9 @@ const User = () => {
         return value ? <div>{text} : {value}</div> : null
     } 
 
-    return userInfo && state.showDetailed ? <div className="article article--detailed">
+    return userInfo && state.showDetailed ? <div>
+        <Button />
+        <div className="article article--detailed">
             <h1>{userInfo.name}</h1>
 
             <div className="detailed__container detailed__img__container"> 
@@ -32,7 +36,8 @@ const User = () => {
 
 
             </div>
-        </div> : null
+        </div> 
+    </div>: null
 }
 
 export default User;
