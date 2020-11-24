@@ -15,9 +15,9 @@ export const setUsers = (payload) => ({
     payload
 });
 
-export const getUserInfo = (userName) => ({
+export const getUserInfo = (payload) => ({
     type: GET_USER_INFO,
-    userName
+    payload
 });
 
 export const setUserInfo = (payload) => ({

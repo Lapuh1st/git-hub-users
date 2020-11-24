@@ -11,7 +11,7 @@ let UserList = () => {
   const users = useSelector(state => state.users);
 
   useEffect(() => {
-    dispatch(getUsers({currentPage}))
+    dispatch(getUsers(currentPage))
   }, [currentPage]);
 
   if (users && users.length) {

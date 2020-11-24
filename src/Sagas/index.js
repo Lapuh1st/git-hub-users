@@ -5,7 +5,7 @@ export const PER_PAGE = 100;
 export const BASE_URL = "https://api.github.com/users";
 
 function* fetchUsers(action) {
-  const { currentPage } = action.payload;
+  const currentPage = action.payload;
   const since = currentPage ? currentPage * PER_PAGE - PER_PAGE : 0;
   const url = `${BASE_URL}?per_page=${PER_PAGE}&since=${since}`;
 
@@ -14,9 +14,11 @@ function* fetchUsers(action) {
   yield put(setUsers(json));
 }
 
-function* fetchUserInfo(payload) {
+function* fetchUserInfo(action) {
+  const userName = action.payload;
+
   const json = yield fetch(
-    `${BASE_URL}/${payload.userName}`
+    `${BASE_URL}/${userName}`
   ).then(response => response.json());
   yield put(setUserInfo(json));
 }
