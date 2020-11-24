@@ -1,0 +1,17 @@
+.pagination {
+    text-align: center;
+}
+
+.pagination button, .pagination a {
+    background-color: #2ea44f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+a.pagination__current {
+    background-color: grey;
+}

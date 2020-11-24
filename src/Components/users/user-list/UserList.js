@@ -1,22 +1,23 @@
 import {useEffect} from "react";
 import { getUsers } from '../../../Actions/index';
+import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import User from "../user-view/User"
+import User from "../user-view/User";
 
 let UserList = () => {
   let usersToShow = [];
+  const { currentPage } = useParams();
   const dispatch = useDispatch();
-  const state = useSelector(state => state);
+  const users = useSelector(state => state.users);
 
   useEffect(() => {
-      dispatch(getUsers())
-  }, []);
+    dispatch(getUsers({currentPage}))
+  }, [currentPage]);
 
-  if (state.users && state.users.length) {
-    usersToShow = state.users.map(user  => {
+  if (users && users.length) {
+    usersToShow = users.map(user  => {
       return User(user);
     })
-
   }
 
   return usersToShow;

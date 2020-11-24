@@ -1,11 +1,13 @@
 import React from 'react';
-import Loading from '../Components/users/Loading';
+import Loading from './Loading';
+import Pagination from '../Components/users/pagination/Pagination';
 import UserList from '../Components/users/user-list/UserList';
-import UserDetailed from '../Components/users/user-detailed/UserDetailed';
+import UserInfo from '../Components/users/user-info/UserInfo';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 let App = () => {
@@ -13,14 +15,16 @@ let App = () => {
     <div>
       <h1 className="title">List of github users</h1>
       <Loading />
-      
+
       <Router>
         <Switch>
-            <Route exact path="/">
+            <Redirect exact from="/" to="list" />
+            <Route exact path="/list/:currentPage?">
+              <Pagination/>
               <UserList />
             </Route>
-            <Route path="/user-detailed/:username">
-              <UserDetailed />
+            <Route exact path="/user-info/:username">
+              <UserInfo />
             </Route>
           </Switch>
       </Router>

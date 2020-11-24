@@ -3,17 +3,19 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserInfo, getUserInfoWithoutRequest } from '../../../Actions/index';
 import { Link } from "react-router-dom";
-import './user-deatailed.css';
+import './user-info.css';
 
-const UserDetailed = () => {
+const UserInfo = () => {
     const dispatch = useDispatch();
-    const { username } = useParams();
     const state = useSelector(state => state);
-    const userInfo = state.userInfo;
-    const createdAt = userInfo && userInfo.created_at ? new Date(userInfo.created_at).toLocaleDateString() : null;
+    const { username } = useParams();
+    const { pagination, userInfo } = state;
 
+    const createdAt = userInfo && userInfo.created_at ? new Date(userInfo.created_at).toLocaleDateString() : null;
+    const goBackLink = pagination && pagination.currentPage ? `/list/${pagination.currentPage}` : "/list/"; 
+    
     useEffect(() => {
-        if (state.userInfo && state.userInfo.login === username) {
+        if (userInfo && userInfo.login === username) {
             dispatch(getUserInfoWithoutRequest());
             return;
         }
@@ -24,15 +26,15 @@ const UserDetailed = () => {
         return value ? <div>{text} : {value}</div> : null
     } 
 
-    return userInfo ? <div>
-        <Link to="/" className="button-back"></Link>
-        <div className="user user--detailed">
+    return userInfo ? <div className="user__info">
+        <Link to={goBackLink} className="button-back"></Link>
+        <div className="user user--info">
             <h1>{userInfo.name}</h1>
 
-            <div className="detailed__container detailed__img__container"> 
+            <div className="info__container info__img__container"> 
                 <img className="user__img" width="250" alt="" src={userInfo.avatar_url} />
             </div>
-            <div className="detailed__container detailed__info__container">
+            <div className="info__container info__container-text">
                 {lineGenerator("Followers", userInfo.followers)}
                 {lineGenerator("Following", userInfo.following)}
                 {lineGenerator("Created at", createdAt)}
@@ -40,11 +42,11 @@ const UserDetailed = () => {
                 {lineGenerator("Email", userInfo.email)}
                 {lineGenerator("Location", userInfo.location)}
                 {lineGenerator("Bio", userInfo.bio)}
-                {userInfo.blog ? <div>Open <a className="detailed__link" href={userInfo.blog}>{userInfo.name}</a> blog</div> : null}
+                {userInfo.blog ? <div>Open <a className="info__link" href={userInfo.blog}>{userInfo.name}</a> blog</div> : null}
 
             </div>
         </div> 
     </div>: null
 }
 
-export default UserDetailed;
+export default UserInfo;

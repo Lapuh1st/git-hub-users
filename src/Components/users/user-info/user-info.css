@@ -1,26 +1,31 @@
-.detailed__container {
+.user__info {
+    text-align: center;
+}
+
+.info__container {
     display: inline-block;
     width: 100%;
     vertical-align: top;
     box-sizing: border-box;
 }
 
-.detailed__link {
+.info__link {
     color: #000;
 }
 
-.detailed__info__container div {
-    margin: 2px 0;
-    padding-bottom: 2px;
-    border-bottom: 1px solid #ccc;
-}
-
-.detailed__info__container {
+.info__container-text {
     padding: 15px;
 }
 
+.info__container-text div {
+    margin: 2px 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
 @media only screen and (min-width: 768px) {
-    .detailed__container {
+    .info__container {
         display: inline-block;
         width: 50%;
         vertical-align: top;
