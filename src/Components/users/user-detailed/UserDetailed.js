@@ -24,8 +24,6 @@ const UserDetailed = () => {
         return value ? <div>{text} : {value}</div> : null
     } 
 
-    console.log('work from userDetailed');
-
     return userInfo ? <div>
         <Link to="/" className="button-back"></Link>
         <div className="user user--detailed">

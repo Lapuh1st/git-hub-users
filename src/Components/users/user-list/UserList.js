@@ -12,8 +12,6 @@ let UserList = () => {
       dispatch(getUsers())
   }, []);
 
-  console.log({users: state.users})
-
   if (state.users && state.users.length) {
     usersToShow = state.users.map(user  => {
       return User(user);
