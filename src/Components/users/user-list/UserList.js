@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import { useEffect} from "react";
 import { getUsers } from '../../../Actions/index';
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";

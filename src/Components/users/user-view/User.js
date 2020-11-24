@@ -14,7 +14,7 @@ let User = (user) => {
           </a>
         </div>
         <div className="user__button-container">
-          <Link className="user__button"  to={`/user-info/${user.login}`}>User info</Link>
+          <Link className="user__button" to={`/user-info/${user.login}`}>User info</Link>
         </div>
       </div>
     </div>

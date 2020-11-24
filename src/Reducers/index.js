@@ -10,7 +10,7 @@ import {
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case GET_USERS:
-      return { ...state, loading: true, pagination: action.payload };
+      return { ...state, loading: true, currentPage: action.payload };
     case USERS_RECEIVED:
       return { ...state, users: action.payload, loading: false };
     case GET_USER_INFO:  

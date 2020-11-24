@@ -9,10 +9,10 @@ const UserInfo = () => {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
     const { username } = useParams();
-    const { pagination, userInfo } = state;
+    const { currentPage, userInfo } = state;
 
     const createdAt = userInfo && userInfo.created_at ? new Date(userInfo.created_at).toLocaleDateString() : null;
-    const goBackLink = pagination && pagination.currentPage ? `/list/${pagination.currentPage}` : "/list/"; 
+    const goBackLink = currentPage ? `/list/${currentPage}` : "/list/"; 
     
     useEffect(() => {
         if (userInfo && userInfo.login === username) {
